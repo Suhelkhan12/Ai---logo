@@ -10,7 +10,7 @@ const wrapper = ({
   return (
     <section className={`${sectionPadding}`}>
       <div className="px-4 lg:px-10">
-        <div className="container mx-auto">{children}</div>
+        <div className="max-w-6xl mx-auto">{children}</div>
       </div>
     </section>
   );

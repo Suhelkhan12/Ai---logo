@@ -1,12 +1,11 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
-import Wrapper from "@/components/local/wrapper";
+import HomeHero from "@/components/local/home/home-hero";
 
 const page = () => {
   return (
-    <Wrapper>
-      <Button>hello</Button>
-    </Wrapper>
+    <>
+      <HomeHero />
+    </>
   );
 };
 
