@@ -1,8 +1,14 @@
 import React from "react";
 
-const wrapper = ({ children }: { children: React.ReactNode }) => {
+const wrapper = ({
+  children,
+  sectionPadding,
+}: {
+  children: React.ReactNode;
+  sectionPadding?: string;
+}) => {
   return (
-    <section className=" lg:py-20 md:py-14 py-8">
+    <section className={`${sectionPadding}`}>
       <div className="px-4 lg:px-10">
         <div className="container mx-auto">{children}</div>
       </div>
