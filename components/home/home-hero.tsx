@@ -1,8 +1,8 @@
 import React from "react";
-import Wrapper from "../wrapper";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 import Link from "next/link";
+import Wrapper from "@/components/wrapper";
 
 const HomeHero = () => {
   return (

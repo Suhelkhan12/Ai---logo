@@ -1,6 +1,6 @@
 import React from "react";
 import Wrapper from "./wrapper";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const navbar = () => {
@@ -15,7 +15,7 @@ const navbar = () => {
             🤖 DesignBot
           </Link>
           <Button asChild>
-            <Link href={"/"} className="font-sans">
+            <Link href={"/create-logo"} className="font-sans">
               Get Started
             </Link>
           </Button>
