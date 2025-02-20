@@ -11,8 +11,9 @@ import { MoveLeft, MoveRight } from "lucide-react";
 import LogoName from "./logo-name";
 import LogoDescription from "./logo-description";
 import { useState } from "react";
+import LogoColorPallete from "./logo-color-pallete";
 
-const formSteps = [LogoName, LogoDescription];
+const formSteps = [LogoName, LogoDescription, LogoColorPallete];
 
 const stepFields: Record<number, keyof MultiStepFormSchemaType> = {
   0: "step1",
@@ -29,15 +30,17 @@ const FormContainer = () => {
     defaultValues: {
       step1: { logoname: "" },
       step2: { logodescription: "" },
+      step3: {
+        firstcolor: "#000000",
+        seccondcolor: "#000000",
+        thirdcolor: "#000000",
+        fourthcolor: "#000000",
+      },
     },
-    mode: "onTouched",
+    mode: "onChange",
   });
 
-  const {
-    trigger,
-    handleSubmit,
-    formState: { errors },
-  } = form;
+  const { trigger, handleSubmit } = form;
 
   const nextStep = async () => {
     const isValid = await trigger(stepFields[step], { shouldFocus: false });
@@ -48,25 +51,20 @@ const FormContainer = () => {
   const prevStep = () => setStep((p) => Math.max(p - 1, 0));
 
   function onSubmit(values: MultiStepFormSchemaType) {
-    console.log({
-      values,
-      errors,
-    });
+    console.log(values);
   }
+
   return (
     <Form {...form}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <CurrentStep form={form} />
         <div className="flex items-center justify-between mt-6">
-          <Button
-            variant={"outline"}
-            className="group"
-            onClick={prevStep}
-            disabled={step === 0}
-          >
-            <MoveLeft className="size-4 group-hover:-translate-x-1 transition-transform" />
-            Back
-          </Button>
+          {step > 0 && (
+            <Button variant={"outline"} className="group" onClick={prevStep}>
+              <MoveLeft className="size-4 group-hover:-translate-x-1 transition-transform" />
+              Back
+            </Button>
+          )}
 
           {step < formSteps.length - 1 ? (
             <Button className="group" onClick={nextStep}>

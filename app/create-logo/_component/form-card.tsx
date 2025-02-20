@@ -17,7 +17,7 @@ const FormCard = ({ children, title, subtitle }: FormCardPropTypes) => {
   return (
     <Card className="font-sans">
       <CardHeader>
-        <CardTitle className="text-primary text-xl">{title}</CardTitle>
+        <CardTitle className="text-primary text-2xl">{title}</CardTitle>
         <CardDescription className="text-base">{subtitle}</CardDescription>
       </CardHeader>
       <CardContent>{children}</CardContent>

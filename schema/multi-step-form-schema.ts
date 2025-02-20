@@ -9,6 +9,12 @@ export const multiStepFormSchema = z.object({
       .string()
       .min(30, "Description should be atleast 30 characters."),
   }),
+  step3: z.object({
+    firstcolor: z.string().min(7),
+    seccondcolor: z.string().min(7),
+    thirdcolor: z.string().min(7),
+    fourthcolor: z.string().min(7),
+  }),
 });
 
 export type MultiStepFormSchemaType = z.infer<typeof multiStepFormSchema>;

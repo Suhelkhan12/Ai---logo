@@ -17,8 +17,8 @@ const LogoDescription = ({
 }) => {
   return (
     <FormCard
-      title="Logo description"
-      subtitle="Describe how you want your logo to look like."
+      title="Describe your logo vision"
+      subtitle="Share your ideas, themes or inspirations to create a logo that fits your brand or project"
     >
       <FormField
         control={form.control}
