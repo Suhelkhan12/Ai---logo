@@ -15,6 +15,9 @@ export const multiStepFormSchema = z.object({
     thirdcolor: z.string().min(7),
     fourthcolor: z.string().min(7),
   }),
+  step4: z.object({
+    logodesign: z.string(),
+  }),
 });
 
 export type MultiStepFormSchemaType = z.infer<typeof multiStepFormSchema>;

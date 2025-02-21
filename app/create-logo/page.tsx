@@ -4,7 +4,7 @@ import FormContainer from "./_component/form-container";
 
 const page = () => {
   return (
-    <Wrapper sectionPadding="py-20 lg:py-24 max-w-2xl mx-auto font-sans">
+    <Wrapper sectionPadding="py-32 max-w-2xl mx-auto font-sans">
       <FormContainer />
     </Wrapper>
   );
