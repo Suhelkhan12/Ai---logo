@@ -6,7 +6,7 @@ import Wrapper from "@/components/wrapper";
 
 const HomeHero = () => {
   return (
-    <Wrapper sectionPadding="py-20 lg:py-24 text-center font-mono">
+    <Wrapper sectionPadding="py-24 lg:py-40 text-center font-mono">
       <div className="flex flex-col justify-center items-center gap-3 max-w-3xl mx-auto">
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold font-sans">
           Effortless <span className="text-primary">AI Powered</span> Logos
@@ -21,7 +21,7 @@ const HomeHero = () => {
         </p>
         <div className="flex items-center gap-4 mt-8">
           <Button asChild>
-            <Link href={"/create-logo"}>Get Started</Link>
+            <Link href={"/logo-data"}>Get Started</Link>
           </Button>
           <Button variant={"outline"} asChild>
             <Link

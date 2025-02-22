@@ -12,7 +12,7 @@ const NavabarButtons = () => {
     <>
       {pathname === "/" ? (
         <Button asChild>
-          <Link href={"/create-logo"} className="font-sans">
+          <Link href={"/logo-data"} className="font-sans">
             Get Started
           </Link>
         </Button>

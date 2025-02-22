@@ -1,11 +1,10 @@
 import Wrapper from "@/components/wrapper";
-import React from "react";
-import FormContainer from "./_component/form-container";
+import LogoData from "./_components/LogoData";
 
 const page = () => {
   return (
-    <Wrapper sectionPadding="py-32 max-w-2xl mx-auto font-sans">
-      <FormContainer />
+    <Wrapper sectionPadding="py-32 mx-auto font-sans">
+      <LogoData />
     </Wrapper>
   );
 };

@@ -1,4 +1,6 @@
 "use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Form } from "@/components/ui/form";
 import {
   multiStepFormSchema,
@@ -11,7 +13,6 @@ import { MoveLeft, MoveRight } from "lucide-react";
 import LogoName from "./logo-name";
 import LogoDescription from "./logo-description";
 import LogoColorPallete from "./logo-color-pallete";
-import { useState } from "react";
 import LogoDeisgn from "./logo-design";
 
 const formSteps = [LogoName, LogoDescription, LogoColorPallete, LogoDeisgn];
@@ -24,6 +25,7 @@ const stepFields: Record<number, keyof MultiStepFormSchemaType> = {
 };
 
 const FormContainer = () => {
+  const router = useRouter();
   const [step, setStep] = useState<number>(0);
 
   const CurrentStep = formSteps[step];
@@ -61,7 +63,8 @@ const FormContainer = () => {
   const prevStep = () => setStep((p) => Math.max(p - 1, 0));
 
   function onSubmit(values: MultiStepFormSchemaType) {
-    console.log(values);
+    localStorage.setItem("formdata", JSON.stringify(values));
+    router.push("/create-logo");
   }
 
   return (
